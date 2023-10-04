@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Popins regular";
+  src: url("./webfonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Popins bold";
+  src: url("./webfonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+:root {
+  --orange-brown: #d1884f;
+  --ocean-blue: #008aaa;
+  --blue-sky: #3bbadb;
+}
+
+body {
+  font-family: "Popins regular";
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 10px;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.nav-links li:hover,
+a:hover {
+  color: var(--orange-brown);
+}
+
+#aboutMeSection {
+  /* border: 2px solid blue; */
+  padding: 2%;
+  margin: 2%;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.aboutMeContainer {
+  flex: 1;
+  /* border: 2px solid purple; */
+}
+.welcomeParagraph {
+  font-size: 1.2rem;
+  color: var(--blue-sky);
+}
+.title {
+  font-family: "Popins Bold";
+  font-size: 2rem;
+  color: var(--ocean-blue);
+  width: 65%;
+}
+.title span {
+  color: var(--orange-brown);
+}
+.info {
+  font-weight: 550;
+  /* text-align: justify; */
+}
+.hidden-text {
+  display: none;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.toggle-text {
+  color: var(--blue-sky);
+  cursor: pointer;
+}
+
+.toggle-text.clicked {
+  color: var(--blue-sky);
+}
+
+.toggle-text:hover {
+  text-decoration: underline;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+  margin-top: 10%;
+}
+
+.btn {
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 4px;
+  box-shadow: 0px 3px 0px 0px #c9e8ef;
+  cursor: pointer;
+  border: solid var(--ocean-blue) 2px;
+}
+
+.hireMe {
+  color: #fff;
+  background-color: var(--ocean-blue);
+}
+.hireMe:hover {
+  color: var(--ocean-blue);
+  background-color: #fff;
+  box-shadow: none;
+}
+.seeProjects {
+  color: var(--ocean-blue);
+  box-shadow: none;
+}
+.seeProjects:hover {
+  color: #fff;
+  background-color: var(--ocean-blue);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid pink; */
+}
+.backgroundShell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  /* left: 20%;
+  top: 15%; */
+  background-color: var(--orange-brown);
+  border-bottom-left-radius: 50%;
+}
+
+.meImage {
+  position: absolute;
+  top: -4%;
+  left: 10%;
+  width: 100%;
+  border-bottom-left-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0.5%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    position: absolute; 
+    top: 15%; 
+    left: 0;
+    right: 0;
+    background-color: #fff; 
+    border: 1px solid var(--blue-sky);
+    z-index: 1; 
+  }
+
+  .nav-links.active li {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin-right: 0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .welcomeParagraph {
+    text-align: center;
+  }
+  .container {
+    flex-direction: column-reverse;
+  }
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  .aboutMeContainer {
+    justify-content: center;
+  }
+  .btnContainer {
+    justify-content: center;
+  }
+
+  .meImage {
+    position: relative;
+  }
+}

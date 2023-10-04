@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Sondos Araj Portfolio</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
+        <li>
+          <i class="fa-solid fa-user"></i><a href="#aboutMeSection">About Me</a>
+        </li>
+        <li><i class="fa-solid fa-phone"></i><a href="#">Contact Me</a></li>
+      </ul>
+      <div class="burger-menu" id="burger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Home-->
+    <section id="aboutMeSection">
+      <p class="welcomeParagraph">Welcome to my site</p>
+      <!-- About me section -->
+      <div class="container">
+        <div class="aboutMeContainer">
+          <h1 class="title">
+            Hi, I'm Sondos Araj, a Front-End <span>Engineer</span>.
+          </h1>
+          <article class="info">
+            As a beginner front-end engineer, I bring a strong foundation in web
+            development, a passion for creating user-friendly interfaces, and a
+            dedication to continuous learning. With a collaborative mindset and
+            <span class="hidden-text"
+              >a drive for excellence, I am excited to contribute to dynamic
+              projects, expand my skillset, and grow as a professional front-end
+              engineer.</span
+            ><a href="#" class="toggle-text">See more</a>
+          </article>
+          <div class="btnContainer">
+            <a class="hireMe btn">Hire Me!</a>
+            <a class="seeProjects btn">See My Projects</a>
+          </div>
+        </div>
+        <!-- image section -->
+        <div class="imageContainer">
+          <div class="backgroundShell">
+            <img src="./images/me.jpg" alt="sondos image" class="meImage" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // JavaScript to toggle the burger menu
+        const burgerMenu = document.getElementById("burger-menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        // Toggle the "active" class to show/hide the navigation links
+        burgerMenu.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
+
+        // JavaScript to toggle see more text
+        const toggleTextLinks = document.querySelectorAll(".toggle-text");
+
+        toggleTextLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Toggle the hidden text
+            const hiddenText = this.previousElementSibling; 
+            hiddenText.classList.toggle("visible");
+
+            // Toggle the class on the "See more" link
+            this.classList.toggle("clicked");
+
+            // Update the link text
+            if (hiddenText.classList.contains("visible")) {
+              this.textContent = "See less";
+            } else {
+              this.textContent = "See more";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
