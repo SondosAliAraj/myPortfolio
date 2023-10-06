@@ -15,10 +15,8 @@
     <!-- Navbar -->
     <nav class="navbar">
       <ul class="nav-links">
-        <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
-        <li>
-          <i class="fa-solid fa-user"></i><a href="#aboutMeSection">About Me</a>
-        </li>
+        <li><i class="fa-solid fa-house"></i><a href="#home">Home</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="#aboutMe">About Me</a></li>
         <li><i class="fa-solid fa-phone"></i><a href="#">Contact Me</a></li>
       </ul>
       <div class="burger-menu" id="burger-menu">
@@ -27,7 +25,7 @@
     </nav>
 
     <!-- Home-->
-    <section id="aboutMeSection">
+    <section id="home">
       <p class="welcomeParagraph">Welcome to my site</p>
       <!-- About me section -->
       <div class="container">
@@ -47,7 +45,9 @@
           </article>
           <div class="btnContainer">
             <a class="hireMe btn">Hire Me!</a>
-            <a class="seeProjects btn">See My Projects</a>
+            <a class="seeProjects btn" href="https://github.com/SondosAliAraj"
+              >See My Projects</a
+            >
           </div>
         </div>
         <!-- image section -->
@@ -59,6 +59,7 @@
       </div>
     </section>
 
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // JavaScript to toggle the burger menu
@@ -78,7 +79,7 @@
             event.preventDefault();
 
             // Toggle the hidden text
-            const hiddenText = this.previousElementSibling; 
+            const hiddenText = this.previousElementSibling;
             hiddenText.classList.toggle("visible");
 
             // Toggle the class on the "See more" link
